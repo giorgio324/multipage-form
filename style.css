@@ -42,6 +42,9 @@ Global Styles
 	padding: 0;
 	box-sizing: border-box;
 }
+html {
+	overflow: hidden;
+}
 body {
 	font-family: var(--font-family);
 	background: var(--Magnolia);
@@ -58,17 +61,17 @@ ul {
 a {
 	text-decoration: none;
 }
-/* img:not(.icon) {
+img:not(.icon) {
 	width: 100%;
 	display: block;
-} */
+}
 
 /* fonts for 1440 and above */
 @media screen and (min-width: 1440px) {
 }
 /*  global classes */
 .content-container {
-	width: 375px;
+	width: 100%;
 	display: flex;
 	flex-direction: column;
 	justify-content: space-between;
@@ -109,7 +112,7 @@ a {
 	margin: 0 1rem;
 	padding: 2rem;
 	border-radius: 12px;
-	transform: translateY(-20%);
+	transform: translateY(-15%);
 }
 .card-title {
 	color: var(--Marineblue);
@@ -148,12 +151,12 @@ a {
 	height: 100%;
 	display: flex;
 	flex-direction: column;
-	justify-content: center;
+	justify-content: flex-start;
 	align-items: center;
 }
 .footer-container {
 	background: var(--White);
-	padding: 1.5rem 0;
+	padding: 1.25rem 0;
 	display: flex;
 	justify-content: space-between;
 }

@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- displays site properly based on user's device -->
+
+  <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
+
+  <title>Frontend Mentor | Multi-step form</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+  <div class="content-container">
+    <nav class="nav">
+      <img src="assets/images/bg-sidebar-mobile.svg" class="mobile-nav" alt="">
+      <section class="btn-container">
+        <button class="btn-round" data-id="1">1</button>
+        <button class="btn-round" data-id="2">2</button>
+        <button class="btn-round" data-id="3">3</button>
+        <button class="btn-round" data-id="4">4</button>
+      </section>
+    </nav>
+    <section class="card-container">
+      <div class="card">
+        <h2 class="card-title">Personal info</h2>
+        <p class="card-info">please provide your name emial and phone</p>
+        <form class="card-form">
+          <div class="name">
+            <label for="name" class="form-name">Name</label>
+            <input type="text" name="name" id="name" placeholder="e.g. Stephen King">
+          </div>
+          <div class="email">
+            <label for="email" class="form-email">Email Address</label>
+            <input type="text" name="email" id="email" placeholder="e.g. StephenKing@gmail.com">
+          </div>
+          <div class="phone">
+            <label for="phone" class="form-phone">Phone Number</label>
+            <input type="text" name="phone" id="phone" placeholder="e.g. +1 234 567 890">
+          </div>
+
+        </form>
+      </div>
+    </section>
+    <footer class="footer-container">
+      <button class="back-btn">Go Back</button>
+      <button class="next-btn">Next Step</button>
+    </footer>
+  </div>
+
+</body>
+
+</html>

@@ -1,0 +1,176 @@
+/*
+=============== 
+Fonts
+===============
+*/
+@import url("https://fonts.googleapis.com/css2?family=Ubuntu:wght@400;500;700&display=swap");
+
+/*
+=============== 
+Variables
+===============
+*/
+
+:root {
+	--Marineblue: hsl(213, 96%, 18%);
+	--Purplishblue: hsl(243, 100%, 62%);
+	--Pastelblue: hsl(228, 100%, 84%);
+	--Lightblue: hsl(206, 94%, 87%);
+	--Strawberryred: hsl(354, 84%, 57%);
+
+	--Coolgray: hsl(231, 11%, 63%);
+	--Lightgray: hsl(229, 24%, 87%);
+	--Magnolia: hsl(217, 100%, 97%);
+	--Alabaster: hsl(231, 100%, 99%);
+	--White: hsl(0, 0%, 100%);
+
+	--font-family: "Ubuntu", sans-serif;
+	--transition: all 0.3s linear;
+	--spacing: 0.25rem;
+	--radius: 0.5rem;
+}
+/*
+=============== 
+Global Styles
+===============
+*/
+
+*,
+::after,
+::before {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+body {
+	font-family: var(--font-family);
+	background: var(--Magnolia);
+	color: var(--Coolgray);
+	line-height: 1.25;
+	font-size: 16px;
+	min-height: 100vh;
+	display: flex;
+	justify-content: center;
+}
+ul {
+	list-style-type: none;
+}
+a {
+	text-decoration: none;
+}
+/* img:not(.icon) {
+	width: 100%;
+	display: block;
+} */
+
+/* fonts for 1440 and above */
+@media screen and (min-width: 1440px) {
+}
+/*  global classes */
+.content-container {
+	width: 375px;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+}
+.nav {
+	height: 172px;
+	position: relative;
+}
+.btn-container {
+	position: absolute;
+	width: 100%;
+	top: 0;
+	left: 50%;
+	transform: translate(-50%, 60%);
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+.btn-round {
+	border: var(--White) solid 1px;
+	background: transparent;
+	width: 35px;
+	height: 35px;
+	border-radius: 50%;
+	padding: 0.5rem;
+	transition: var(--transition);
+	color: var(--White);
+	margin: 0 0.5rem;
+	font-weight: 700;
+}
+.btn-round:first-child {
+	background: var(--Lightblue);
+	border-color: var(--Lightblue);
+	color: black;
+}
+.card {
+	background: var(--White);
+	margin: 0 1rem;
+	padding: 2rem;
+	border-radius: 12px;
+	transform: translateY(-20%);
+}
+.card-title {
+	color: var(--Marineblue);
+	padding: 0.25rem 0;
+}
+.card-info {
+	padding: 1rem 0;
+}
+
+.name,
+.email,
+.phone {
+	display: flex;
+	flex-direction: column;
+}
+#name,
+#email,
+#phone {
+	padding: 0.75rem;
+}
+#name::placeholder,
+#email::placeholder,
+#phone::placeholder {
+	font-weight: 500;
+	font-size: 15px;
+	padding: 0.2rem;
+}
+.form-name,
+.form-email,
+.form-phone {
+	margin-top: 1rem;
+	margin-bottom: 0.2rem;
+	color: var(--Marineblue);
+}
+.card-container {
+	height: 100%;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+}
+.footer-container {
+	background: var(--White);
+	padding: 1.5rem 0;
+	display: flex;
+	justify-content: space-between;
+}
+.back-btn {
+	border: none;
+	background: transparent;
+	margin-left: 2rem;
+	padding: 0.25rem;
+	color: var(--Coolgray);
+}
+.next-btn {
+	margin-right: 2rem;
+	border: none;
+	background: var(--Marineblue);
+	color: var(--White);
+	padding: 0.75rem 1rem;
+	border-radius: 4px;
+}
+@media screen and (min-width: 1440px) {
+}

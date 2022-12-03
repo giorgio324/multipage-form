@@ -70,6 +70,9 @@ img:not(.icon) {
 @media screen and (min-width: 1440px) {
 }
 /*  global classes */
+.hide {
+	display: none;
+}
 .content-container {
 	width: 100%;
 	display: flex;
@@ -156,24 +159,29 @@ img:not(.icon) {
 }
 .footer-container {
 	background: var(--White);
-	padding: 1.25rem 0;
+	padding: 1.5rem 2rem;
 	display: flex;
+	width: 100%;
+	align-items: center;
 	justify-content: space-between;
 }
 .back-btn {
 	border: none;
 	background: transparent;
-	margin-left: 2rem;
 	padding: 0.25rem;
 	color: var(--Coolgray);
+	justify-self: flex-end;
+	visibility: hidden;
+	cursor: pointer;
 }
 .next-btn {
-	margin-right: 2rem;
 	border: none;
 	background: var(--Marineblue);
 	color: var(--White);
 	padding: 0.75rem 1rem;
-	border-radius: 4px;
+	border-radius: 6px;
+	justify-self: flex-start;
+	cursor: pointer;
 }
 @media screen and (min-width: 1440px) {
 }

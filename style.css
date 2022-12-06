@@ -46,7 +46,7 @@ html {
 	padding: 0;
 	margin: 0;
 	box-sizing: border-box;
-	overflow: hidden;
+	overflow-x: hidden;
 }
 body {
 	font-family: var(--font-family);
@@ -217,7 +217,7 @@ img:not(.icon) {
 .plan-text {
 	width: 100%;
 	text-align: start;
-	font-size: 14px;
+	font-size: 10px;
 }
 .plan-text h2,
 p {
@@ -277,12 +277,106 @@ p {
 	border: 1px solid var(--Lightgray);
 	background: transparent;
 	border-radius: 8px;
-	margin: 0.25rem 0;
+	margin: 0.35rem 0;
 	padding: 0.5rem;
+	transition: 0.1s all linear;
+}
+.add-on-btn:active {
+	background-color: var(--Magnolia);
 }
 .add-on-checkbox {
 	margin-right: 1rem;
 }
+.add-on-price p {
+	color: var(--Purplishblue);
+	font-weight: 400;
+}
+input[type="checkbox"] {
+	width: 20px;
+	height: 20px;
+	background: white;
+	border-radius: 12px;
+}
 
+input[type="checkbox"]:checked {
+	accent-color: var(--Purplishblue);
+}
+/* add this to add-on-btn in js when checkbox in checked !!! */
+.checked {
+	background: var(--Magnolia);
+	border-color: var(--Purplishblue);
+}
+/* finishing section */
+.finish-container {
+	display: flex;
+	flex-direction: column;
+}
+.current-plan {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+}
+.underline {
+	height: 1px;
+	background: var(--Coolgray);
+	margin: 1rem 0;
+}
+.current-stats {
+	background: var(--Alabaster);
+	border-radius: 8px;
+	padding: 1.5rem;
+}
+.plan-info,
+.plan-info a,
+.plan-info p {
+	color: var(--Coolgray);
+}
+.plan-info {
+	color: var(--Marineblue);
+	font-size: 14px;
+}
+.plan-info a {
+	text-decoration: underline;
+}
+.plan-info p {
+	margin: 0.5rem 0;
+}
+.bold {
+	font-weight: bold;
+}
+.current-add-on-1,
+.current-add-on-2,
+.current-add-on-3 {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+}
+.final-price {
+	color: var(--Marineblue);
+	font-size: 14px;
+}
+.total-container {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	padding: 1.5rem;
+}
+.final-total-price {
+	color: var(--Purplishblue);
+}
+.thank-you {
+	text-align: center;
+}
+.thanks-img-container {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	padding-top: 3rem;
+	padding-bottom: 2rem;
+}
+.thanks-img {
+	max-width: 70px;
+	max-height: 70px;
+}
 @media screen and (min-width: 1440px) {
 }

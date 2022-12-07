@@ -109,7 +109,8 @@ img:not(.icon) {
 	margin: 0 0.5rem;
 	font-weight: 700;
 }
-.btn-round:first-child {
+
+.active-btn {
 	background: var(--Lightblue);
 	border-color: var(--Lightblue);
 	color: black;

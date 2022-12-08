@@ -74,7 +74,7 @@ img:not(.icon) {
 }
 /*  global classes */
 .hide {
-	display: none;
+	display: none !important;
 }
 /* registration section */
 .content-container {
@@ -253,6 +253,7 @@ p {
 	justify-content: start;
 	align-items: center;
 	border: none;
+	cursor: pointer;
 }
 .toggle-circle {
 	transition: var(--transition);

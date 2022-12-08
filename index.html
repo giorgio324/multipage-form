@@ -17,10 +17,10 @@
     <nav class="nav">
       <img src="assets/images/bg-sidebar-mobile.svg" class="mobile-nav" alt="">
       <section class="btn-container">
-        <button class="btn-round active-btn" data-id="1">1</button>
-        <button class="btn-round" data-id="2">2</button>
-        <button class="btn-round" data-id="3">3</button>
-        <button class="btn-round" data-id="4">4</button>
+        <button class="btn-round active-btn">1</button>
+        <button class="btn-round">2</button>
+        <button class="btn-round">3</button>
+        <button class="btn-round">4</button>
       </section>
     </nav>
     <section class="card-container">
@@ -49,7 +49,7 @@
         <h2 class="card-title">Select Your Plan</h2>
         <p class="card-info">You have the option of monthly or yearly billing.</p>
         <section class="plan-container">
-          <button class="plan-btn">
+          <button class="plan-btn" data-id="arcade">
             <div class="plan">
               <div class="plan-img">
                 <img src="assets/images/icon-arcade.svg" alt="">
@@ -57,11 +57,11 @@
               <div class="plan-text">
                 <h2>Arcade</h2>
                 <p class="plan-price">$90/yr</p>
-                <p>2 months free</p>
+                <p class="trial hide">2 months free</p>
               </div>
             </div>
           </button>
-          <button class="plan-btn">
+          <button class="plan-btn" data-id="advanced">
             <div class="plan">
               <div class="plan-img">
                 <img src="assets/images/icon-advanced.svg" alt="">
@@ -69,11 +69,11 @@
               <div class="plan-text">
                 <h2>Advanced</h2>
                 <p class="plan-price">$120/yr</p>
-                <p>2 months free</p>
+                <p class="trial hide">2 months free</p>
               </div>
             </div>
           </button>
-          <button class="plan-btn">
+          <button class="plan-btn" data-id="pro">
             <div class="plan">
               <div class="plan-img">
                 <img src="assets/images/icon-pro.svg" alt="">
@@ -81,7 +81,7 @@
               <div class="plan-text">
                 <h2>Pro</h2>
                 <p class="plan-price">$150/yr</p>
-                <p>2 months free</p>
+                <p class="trial hide">2 months free</p>
               </div>
             </div>
           </button>

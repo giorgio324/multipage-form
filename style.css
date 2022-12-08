@@ -202,6 +202,12 @@ img:not(.icon) {
 	display: flex;
 	align-items: center;
 }
+/* this gets added when plan is clicked */
+.plan-active {
+	border: 1px solid var(--Purplishblue) !important;
+	background: var(--Alabaster) !important;
+}
+/*  */
 .plan-btn {
 	border: 1px solid var(--Lightgray);
 	background: transparent;

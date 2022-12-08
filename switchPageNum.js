@@ -1,6 +1,5 @@
 let pageBtnNum = 0;
 const pagesBtn = [...document.querySelectorAll(".btn-round")];
-console.log(pagesBtn);
 let currentPageNumber;
 const changePageNumber = function (type) {
 	if (type === "next") {

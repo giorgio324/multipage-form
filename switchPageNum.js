@@ -14,7 +14,7 @@ const changePageNumber = function (type) {
 		}
 	}
 	if (type === "prev") {
-		if (pageBtnNum >= 0 && pageBtnNum < pagesBtn.length - 1) {
+		if (pageBtnNum >= 0 && pageBtnNum < pagesBtn.length) {
 			pagesBtn.forEach((page) => {
 				page.classList.remove("active-btn");
 			});

@@ -10,7 +10,6 @@ const changePageNumber = function (type) {
 			pageBtnNum++;
 			currentPageNumber = pagesBtn[pageBtnNum];
 			currentPageNumber.classList.add("active-btn");
-			console.log(currentPageNumber);
 		}
 	}
 	if (type === "prev") {
@@ -21,7 +20,6 @@ const changePageNumber = function (type) {
 			pageBtnNum--;
 			currentPageNumber = pagesBtn[pageBtnNum];
 			currentPageNumber.classList.add("active-btn");
-			console.log(currentPageNumber);
 		}
 	}
 };

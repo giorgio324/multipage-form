@@ -142,13 +142,61 @@ img:not(.icon) {
 #email,
 #phone {
 	padding: 0.75rem;
+	border-radius: 8px;
+	border: solid var(--Magnolia) 1px;
 }
+
 #name::placeholder,
 #email::placeholder,
 #phone::placeholder {
 	font-weight: 500;
 	font-size: 15px;
 	padding: 0.2rem;
+}
+.name-field,
+.email-field,
+.phone-field {
+	display: flex;
+	justify-content: space-between;
+}
+@keyframes shake {
+	0% {
+		transform: translate(1px, 1px) rotate(0deg);
+	}
+	10% {
+		transform: translate(-1px, -2px) rotate(-1deg);
+	}
+	20% {
+		transform: translate(-3px, 0px) rotate(1deg);
+	}
+	30% {
+		transform: translate(3px, 2px) rotate(0deg);
+	}
+	40% {
+		transform: translate(1px, -1px) rotate(1deg);
+	}
+	50% {
+		transform: translate(-1px, 2px) rotate(-1deg);
+	}
+	60% {
+		transform: translate(-3px, 1px) rotate(0deg);
+	}
+	70% {
+		transform: translate(3px, 1px) rotate(-1deg);
+	}
+	80% {
+		transform: translate(-1px, -1px) rotate(1deg);
+	}
+	90% {
+		transform: translate(1px, 2px) rotate(0deg);
+	}
+	100% {
+		transform: translate(1px, -2px) rotate(-1deg);
+	}
+}
+.form-incorect {
+	color: var(--Strawberryred) !important;
+	animation: shake 0.3s;
 }
 .form-name,
 .form-email,
@@ -386,5 +434,82 @@ input[type="checkbox"]:checked {
 	max-width: 70px;
 	max-height: 70px;
 }
+.desktop-nav {
+	display: none !important;
+}
+.btn-info {
+	display: none;
+}
 @media screen and (min-width: 1440px) {
+	body {
+		justify-content: center;
+		align-items: center;
+		min-height: 100vh;
+		font-size: 20px;
+	}
+	.content-container {
+		flex-direction: row;
+		background: white;
+		justify-content: center;
+		border-radius: 15px;
+		align-items: center;
+		padding: 1rem;
+		max-width: fit-content;
+	}
+	.mobile-nav {
+		display: none !important;
+	}
+	.desktop-nav {
+		display: inline-block !important;
+		border-radius: 15px;
+	}
+	.card {
+		transform: translateY(0);
+	}
+	.card-title {
+		padding: 0.25rem 0;
+	}
+	.card-info {
+		padding: 1rem 0;
+		font-weight: 300;
+		max-width: 465px;
+	}
+
+	.footer-container {
+		position: relative;
+		padding: 2.75rem;
+	}
+	.card-footer-conect {
+		display: flex;
+		flex-direction: column;
+	}
+	.nav {
+		max-height: none;
+	}
+	.btn-container {
+		flex-direction: column;
+		padding: 3rem;
+		transform: translate(0, 0);
+		left: 0;
+		top: 0;
+		width: 100%;
+	}
+	.btn-flex {
+		display: flex;
+		width: 100%;
+		align-items: center;
+		padding: 0.5rem 0;
+	}
+	.btn-info {
+		display: inline-block;
+		padding-left: 0.5rem;
+	}
+	.btn-info-name {
+		font-size: 18px;
+		width: 100%;
+	}
+	.step {
+		font-size: 15px;
+		width: 100%;
+	}
 }

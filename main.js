@@ -16,8 +16,7 @@ planItems.forEach((item) => {
 });
 
 nextBtn.addEventListener("click", function () {
-	changePage("next");
-	console.log(planChoice, monthly);
+	changePage("next", planChoice, monthly);
 });
 
 backBtn.addEventListener("click", function () {

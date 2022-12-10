@@ -144,6 +144,7 @@ img:not(.icon) {
 	padding: 0.75rem;
 	border-radius: 8px;
 	border: solid var(--Magnolia) 1px;
+	outline-color: var(--Purplishblue);
 }
 
 #name::placeholder,
@@ -198,6 +199,13 @@ img:not(.icon) {
 	color: var(--Strawberryred) !important;
 	animation: shake 0.3s;
 }
+.plan-error {
+	color: var(--Strawberryred) !important;
+	animation: shake 0.3s;
+	text-align: center;
+	padding: 1rem 0;
+	font-size: 16px;
+}
 .form-name,
 .form-email,
 .form-phone {
@@ -231,6 +239,11 @@ img:not(.icon) {
 	justify-self: flex-end;
 	visibility: hidden;
 	cursor: pointer;
+	font-weight: bold;
+	transition: var(--transition);
+}
+.back-btn:hover {
+	color: var(--Marineblue);
 }
 .next-btn {
 	border: none;
@@ -240,6 +253,10 @@ img:not(.icon) {
 	border-radius: 6px;
 	justify-self: flex-start;
 	cursor: pointer;
+	transition: var(--transition);
+}
+.next-btn:hover {
+	background: var(--Purplishblue);
 }
 /* plan section */
 .plan-container {
@@ -440,6 +457,9 @@ input[type="checkbox"]:checked {
 .btn-info {
 	display: none;
 }
+.add-on-text {
+	color: var(--Coolgray) !important;
+}
 @media screen and (min-width: 1440px) {
 	body {
 		justify-content: center;
@@ -507,9 +527,26 @@ input[type="checkbox"]:checked {
 	.btn-info-name {
 		font-size: 18px;
 		width: 100%;
+		color: var(--White);
 	}
 	.step {
 		font-size: 15px;
 		width: 100%;
+		color: var(--Lightgray);
+	}
+	.plan-container {
+		display: inline-block;
+	}
+	.plan {
+		flex-direction: column;
+		margin-left: 0.75rem;
+		margin-top: 0.75rem;
+	}
+	.plan-img {
+		margin-bottom: 3rem;
+		width: 100%;
+	}
+	.plan-text {
+		margin: 0 2rem;
 	}
 }

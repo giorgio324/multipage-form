@@ -11,6 +11,7 @@ const incorectForm = [...document.querySelectorAll(".form-incorect")];
 const planError = document.querySelector(".plan-error");
 const finishContainer = document.querySelector(".finish-container");
 export const backBtn = document.querySelector(".back-btn");
+const confirmationBtn = document.querySelector(".next-btn");
 export let pageNumber = 0;
 const changePage = function (type, planChoice, monthly, monthPrice, yearPrice) {
 	let userName = inputName.value;
@@ -32,6 +33,9 @@ const changePage = function (type, planChoice, monthly, monthPrice, yearPrice) {
 			if (pageNumber > 0 && !planChoice) {
 				planError.classList.remove("hide");
 				return;
+			}
+			if (pageNumber === 2) {
+				confirmationBtn.textContent = "Confirm";
 			}
 			// if the user selects plan and goes monthly subscribtion
 			if (pageNumber === 2 && planChoice && monthly) {
@@ -128,6 +132,7 @@ const changePage = function (type, planChoice, monthly, monthPrice, yearPrice) {
 	}
 	if (type === "prev") {
 		if (pageNumber >= 0 && pageNumber < allPages.length - 1) {
+			confirmationBtn.textContent = "Next step";
 			if (pageNumber >= 2) {
 				uncheck();
 				for (const yearP in addOnsYear) {
@@ -153,6 +158,8 @@ const changePage = function (type, planChoice, monthly, monthPrice, yearPrice) {
 	}
 	if (type === "change") {
 		uncheck();
+		confirmationBtn.textContent = "Next step";
+		planError.classList.add("hide");
 		for (const yearP in addOnsYear) {
 			delete addOnsYear[yearP];
 		}

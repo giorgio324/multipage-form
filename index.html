@@ -84,7 +84,7 @@
           <h2 class="card-title">Select Your Plan</h2>
           <p class="card-info">You have the option of monthly or yearly billing.</p>
           <section class="plan-container">
-            <button class="plan-btn" data-id="arcade">
+            <button class="plan-btn" data-id="arcade" data-pricemonth="9" data-priceyear="90">
               <div class="plan">
                 <div class="plan-img">
                   <img src="assets/images/icon-arcade.svg" alt="">
@@ -96,7 +96,7 @@
                 </div>
               </div>
             </button>
-            <button class="plan-btn" data-id="advanced">
+            <button class="plan-btn" data-id="advanced" data-pricemonth="12" data-priceyear="120">
               <div class="plan">
                 <div class="plan-img">
                   <img src="assets/images/icon-advanced.svg" alt="">
@@ -108,7 +108,7 @@
                 </div>
               </div>
             </button>
-            <button class="plan-btn" data-id="pro">
+            <button class="plan-btn" data-id="pro" data-pricemonth="15" data-priceyear="150">
               <div class="plan">
                 <div class="plan-img">
                   <img src="assets/images/icon-pro.svg" alt="">
@@ -139,7 +139,8 @@
             <button class="add-on-btn">
               <div class="add-on">
                 <div class="add-on-checkbox">
-                  <input type="checkbox" name="online-service" class="online-service" data-box="Online service">
+                  <input type="checkbox" name="online-service" class="online-service" data-box="Online service"
+                    data-addmonthprice="1" data-addyearprice="10">
                 </div>
                 <div class="plan-text">
                   <h2>Online service</h2>
@@ -153,7 +154,8 @@
             <button class="add-on-btn">
               <div class="add-on">
                 <div class="add-on-checkbox">
-                  <input type="checkbox" name="online-service" class="online-service" data-box="Larger storage">
+                  <input type="checkbox" name="online-service" class="online-service" data-box="Larger storage"
+                    data-addmonthprice="2" data-addyearprice="20">
                 </div>
                 <div class="plan-text">
                   <h2>Larger storage</h2>
@@ -167,7 +169,8 @@
             <button class="add-on-btn">
               <div class="add-on">
                 <div class="add-on-checkbox">
-                  <input type="checkbox" name="online-service" class="online-service" data-box="Customizable profile">
+                  <input type="checkbox" name="online-service" class="online-service" data-box="Customizable profile"
+                    data-addmonthprice="2" data-addyearprice="20">
                 </div>
                 <div class="plan-text">
                   <h2>Customizable profile</h2>
@@ -190,7 +193,7 @@
               <div class="current-plan">
                 <div class="plan-info">
                   <h3>Arcade (monthly)</h3>
-                  <a href="#">change</a>
+                  <a href="" class="change">change</a>
                 </div>
                 <div class="final-price bold">$9/mo</div>
               </div>

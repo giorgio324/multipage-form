@@ -1,6 +1,7 @@
 import changePageNumber from "./switchPageNum.js";
-import { addOnList } from "./add-on.js";
-const card = document.querySelector(".content-container");
+import { addOnsMonth } from "./add-on.js";
+import { addOnsYear } from "./add-on.js";
+import uncheck from "./add-on-helper.js";
 const inputName = document.querySelector("#name");
 const inputEmail = document.querySelector("#email");
 const inputPhone = document.querySelector("#phone");
@@ -8,9 +9,10 @@ const footer = document.querySelector(".footer-container");
 const allPages = [...document.querySelectorAll(".card")];
 const incorectForm = [...document.querySelectorAll(".form-incorect")];
 const planError = document.querySelector(".plan-error");
+const finishContainer = document.querySelector(".finish-container");
 export const backBtn = document.querySelector(".back-btn");
 export let pageNumber = 0;
-const changePage = function (type, planChoice, monthly) {
+const changePage = function (type, planChoice, monthly, monthPrice, yearPrice) {
 	let userName = inputName.value;
 	let userEmail = inputEmail.value;
 	let userPhone = inputPhone.value;
@@ -31,17 +33,82 @@ const changePage = function (type, planChoice, monthly) {
 				planError.classList.remove("hide");
 				return;
 			}
-			// to do
 			// if the user selects plan and goes monthly subscribtion
 			if (pageNumber === 2 && planChoice && monthly) {
-				console.log("monthly");
-				console.log(addOnList);
+				const values = Object.values(addOnsMonth);
+				const sum = values.reduce((accumulator, value) => {
+					return accumulator + Number(value);
+				}, 0);
+				const finalPrice = sum + Number(monthPrice);
+				finishContainer.innerHTML = `<section class="finish-container">
+            <div class="current-stats">
+              <div class="current-plan">
+                <div class="plan-info">
+                  <h3>${planChoice} (${monthly ? "monthly" : "yearly"})</h3>
+                  <a href="" class="change">change</a>
+                </div>
+                <div class="final-price bold">+${monthPrice}/mo</div>
+              </div>
+              <div class="underline"></div>
+			  ${Object.entries(addOnsMonth)
+					.map(
+						(entry, i) => `<div class="current-add-on-${i + 1}">
+                <div class="plan-info">
+                  <p>${entry[0]}</p>
+                </div>
+                <div class="final-price ">+$${entry[1]}/yr</div>
+              </div>`
+					)
+					.join("")}
+            </div>
+            <div class="total-container">
+              <p>Total (per <span class="total-time">${
+					monthly ? "month" : "year"
+				}</span>)</p>
+              <div class="final-total-price bold">+$${finalPrice}/mo</div>
+            </div>
+          </section>`;
+				let change = document.querySelector(".change");
+				change.addEventListener("click", function (e) {
+					e.preventDefault();
+					changePage("change");
+				});
 			}
-			// to do
 			// if the user selects plan and goes yearly subscription
 			if (pageNumber === 2 && planChoice && !monthly) {
-				console.log("yearly");
-				console.log(addOnList);
+				const values = Object.values(addOnsYear);
+				const sum = values.reduce((accumulator, value) => {
+					return accumulator + Number(value);
+				}, 0);
+				const finalPrice = sum + Number(yearPrice);
+				finishContainer.innerHTML = `<section class="finish-container">
+            <div class="current-stats">
+              <div class="current-plan">
+                <div class="plan-info">
+                  <h3>${planChoice} (${monthly ? "monthly" : "yearly"})</h3>
+                  <a href="" class="change">change</a>
+                </div>
+                <div class="final-price bold">+${yearPrice}/yr</div>
+              </div>
+              <div class="underline"></div>
+              ${Object.entries(addOnsYear)
+					.map(
+						(entry, i) => `<div class="current-add-on-${i + 1}">
+                <div class="plan-info">
+                  <p>${entry[0]}</p>
+                </div>
+                <div class="final-price ">+$${entry[1]}/yr</div>
+              </div>`
+					)
+					.join("")}
+            </div>
+            <div class="total-container">
+              <p>Total (per <span class="total-time">${
+					monthly ? "month" : "year"
+				}</span>)</p>
+              <div class="final-total-price bold">+${finalPrice}/yr</div>
+            </div>
+          </section>`;
 			}
 			allPages.forEach((page) => {
 				page.classList.add("hide");
@@ -57,11 +124,19 @@ const changePage = function (type, planChoice, monthly) {
 				footer.classList.add("hide");
 			}
 			changePageNumber("next");
-			console.log(planChoice, monthly);
 		}
 	}
 	if (type === "prev") {
 		if (pageNumber >= 0 && pageNumber < allPages.length - 1) {
+			if (pageNumber >= 2) {
+				uncheck();
+				for (const yearP in addOnsYear) {
+					delete addOnsYear[yearP];
+				}
+				for (const monthP in addOnsMonth) {
+					delete addOnsMonth[monthP];
+				}
+			}
 			allPages.forEach((page) => {
 				page.classList.add("hide");
 			});
@@ -75,6 +150,23 @@ const changePage = function (type, planChoice, monthly) {
 			}
 			changePageNumber("prev");
 		}
+	}
+	if (type === "change") {
+		uncheck();
+		for (const yearP in addOnsYear) {
+			delete addOnsYear[yearP];
+		}
+		for (const monthP in addOnsMonth) {
+			delete addOnsMonth[monthP];
+		}
+		allPages.forEach((page) => {
+			page.classList.add("hide");
+		});
+		pageNumber = 1;
+		currentPage = allPages[pageNumber];
+
+		currentPage.classList.remove("hide");
+		changePageNumber("change");
 	}
 };
 export default changePage;

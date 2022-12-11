@@ -22,5 +22,13 @@ const changePageNumber = function (type) {
 			currentPageNumber.classList.add("active-btn");
 		}
 	}
+	if (type === "change") {
+		pagesBtn.forEach((page) => {
+			page.classList.remove("active-btn");
+		});
+		pageBtnNum = 1;
+		currentPageNumber = pagesBtn[pageBtnNum];
+		currentPageNumber.classList.add("active-btn");
+	}
 };
 export default changePageNumber;

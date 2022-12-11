@@ -5,11 +5,13 @@ import check from "./add-on.js";
 import { planChoice } from "./planSelect.js";
 import { monthly } from "./year-monthToggle.js";
 import { backBtn } from "./switchPages.js";
-
+import { planMonthPrice } from "./planSelect.js";
+import { planYearPrice } from "./planSelect.js";
 const nextBtn = document.querySelector(".next-btn");
 const toggleContainer = document.querySelector(".toggle-container");
 const planItems = document.querySelectorAll(".plan-btn");
 const addOn = document.querySelectorAll(".add-on-btn");
+const change = document.querySelector(".change");
 
 planItems.forEach((item) => {
 	item.addEventListener("click", function (e) {
@@ -24,7 +26,7 @@ addOn.forEach((item) => {
 });
 
 nextBtn.addEventListener("click", function () {
-	changePage("next", planChoice, monthly);
+	changePage("next", planChoice, monthly, planMonthPrice, planYearPrice);
 });
 
 backBtn.addEventListener("click", function () {
@@ -33,3 +35,9 @@ backBtn.addEventListener("click", function () {
 
 toggleContainer.addEventListener("click", toggle);
 // define go back function and import it
+change.textContent = "a";
+change.addEventListener("click", function (e) {
+	e.preventDefault();
+	console.log("aaaaaaaaa");
+	changePage("change");
+});

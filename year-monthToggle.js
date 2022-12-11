@@ -1,4 +1,3 @@
-import { planItems } from "./planSelect.js";
 const toggleCircle = document.querySelector(".toggle-circle");
 const planTrials = document.querySelectorAll(".trial");
 const planPrices = document.querySelectorAll(".plan-price");

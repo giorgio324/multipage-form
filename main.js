@@ -11,7 +11,7 @@ const nextBtn = document.querySelector(".next-btn");
 const toggleContainer = document.querySelector(".toggle-container");
 const planItems = document.querySelectorAll(".plan-btn");
 const addOn = document.querySelectorAll(".add-on-btn");
-const change = document.querySelector(".change");
+const checkboxes = document.querySelectorAll(".online-service");
 
 planItems.forEach((item) => {
 	item.addEventListener("click", function (e) {
@@ -20,6 +20,12 @@ planItems.forEach((item) => {
 });
 
 addOn.forEach((item) => {
+	item.addEventListener("click", function (e) {
+		check(e);
+	});
+});
+
+checkboxes.forEach((item) => {
 	item.addEventListener("click", function (e) {
 		check(e);
 	});
@@ -34,10 +40,3 @@ backBtn.addEventListener("click", function () {
 });
 
 toggleContainer.addEventListener("click", toggle);
-// define go back function and import it
-change.textContent = "a";
-change.addEventListener("click", function (e) {
-	e.preventDefault();
-	console.log("aaaaaaaaa");
-	changePage("change");
-});

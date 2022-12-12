@@ -2,6 +2,8 @@ import changePageNumber from "./switchPageNum.js";
 import { addOnsMonth } from "./add-on.js";
 import { addOnsYear } from "./add-on.js";
 import uncheck from "./add-on-helper.js";
+import validatePhone from "./validatePhone.js";
+import validateEmail from "./validateEmail.js";
 const inputName = document.querySelector("#name");
 const inputEmail = document.querySelector("#email");
 const inputPhone = document.querySelector("#phone");
@@ -18,12 +20,16 @@ const changePage = function (type, planChoice, monthly, monthPrice, yearPrice) {
 	let userEmail = inputEmail.value;
 	let userPhone = inputPhone.value;
 	let currentPage;
-	if (!userName || !userEmail || !userPhone) {
+	// quick username length varification
+	if (userName.length < 7) {
+		userName = false;
+	}
+	if (!userName || !validateEmail(userEmail) || !validatePhone(userPhone)) {
 		incorectForm.forEach((form) => form.classList.add("hide"));
 
 		!userName && incorectForm[0].classList.remove("hide");
-		!userEmail && incorectForm[1].classList.remove("hide");
-		!userPhone && incorectForm[2].classList.remove("hide");
+		!validateEmail(userEmail) && incorectForm[1].classList.remove("hide");
+		!validatePhone(userPhone) && incorectForm[2].classList.remove("hide");
 
 		return;
 	}
@@ -113,6 +119,11 @@ const changePage = function (type, planChoice, monthly, monthPrice, yearPrice) {
               <div class="final-total-price bold">+${finalPrice}/yr</div>
             </div>
           </section>`;
+				let change = document.querySelector(".change");
+				change.addEventListener("click", function (e) {
+					e.preventDefault();
+					changePage("change");
+				});
 			}
 			allPages.forEach((page) => {
 				page.classList.add("hide");
@@ -132,6 +143,7 @@ const changePage = function (type, planChoice, monthly, monthPrice, yearPrice) {
 	}
 	if (type === "prev") {
 		if (pageNumber >= 0 && pageNumber < allPages.length - 1) {
+			incorectForm.forEach((form) => form.classList.add("hide"));
 			confirmationBtn.textContent = "Next step";
 			if (pageNumber >= 2) {
 				uncheck();

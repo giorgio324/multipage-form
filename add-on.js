@@ -5,8 +5,12 @@ const check = function (e) {
 	let t = e.target;
 	let add = t.closest(".add-on-btn");
 	let checkB = add.querySelector(".online-service");
+	console.log(t);
+	console.log(add);
+	console.log(checkB);
 	if (monthly) {
 		if (checkB.checked === false) {
+			console.log("a");
 			checkB.checked = true;
 			let dataName = checkB.dataset.box;
 			let dataPrice = checkB.dataset.addmonthprice;
@@ -19,6 +23,7 @@ const check = function (e) {
 	}
 	if (!monthly) {
 		if (checkB.checked === false) {
+			console.log("a");
 			checkB.checked = true;
 			let dataName = checkB.dataset.box;
 			let dataPrice = checkB.dataset.addyearprice;
